@@ -1,0 +1,107 @@
+/*переменные(тут цвета)*/
+:root {
+  --primary: #000000;
+  --secondary: #ffffff;
+  --text: #000000;
+  --background: #000000;
+  --box-background: #8d1a1a;
+}
+
+/*Плавная прокрутка страницы*/
+/*smooth — плавная прокрутка; instant — мгновенная прокрутка; auto — на усмотрение браузера.*/
+html {
+  scroll-behavior: smooth;
+}
+
+/*обнуление*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/*расположение всего блока с паролем*/
+body {
+  font-family: 'Roboto', sans-serif;
+  height: 100vh;
+  display: flex;
+  background: var(--background);
+  justify-content: center;
+  align-items: center;
+}
+
+/*сам блок (красный)*/
+.box {
+  background: var(--box-background);
+  padding: 1.5rem;
+  padding-top: 0.75rem;
+  border-radius: 1rem;
+}
+
+/*расположение глаза и password*/
+.input__wrapper {
+  position: relative;
+  padding: 1rem 0 0;
+}
+
+/*строка ввода*/
+.input__field {
+  border: 0;
+  border-bottom: 2px solid var(--secondary);
+  outline: 0;
+  color: var(--text);
+  padding: 0.25rem 0px;
+  padding-right: 2rem;
+
+  background: transparent;
+  transition: border-color 0.2s;
+}
+
+/*скрытие placeholder*/
+.input__field::placeholder {
+  color: transparent;
+}
+
+/*текст на белой линии*/
+.input__field:placeholder-shown~.input__label {
+  font-size: 1rem;
+  cursor: text;
+  color: var(--secondary);
+  top: 1.20rem;
+}
+
+/*анимаиция изменение размера текста password*/
+label,
+.input__field:focus~.input__label {
+  position: absolute;
+  top: 0;
+  display: block;
+  font-size: 0.875rem;
+  left: -0.0625rem;
+  color: var(--secondary);
+  transition: 0.3s;
+}
+
+/*
+.input__field:focus~.input__label {
+  color: var(--primary);
+}
+
+.input__field:focus {
+  border-bottom: 2px solid var(--primary);
+}
+*/
+
+
+/*глаз*/
+.input__icon {
+  position: absolute;
+  right: -0.875rem;
+  bottom: -0.65rem;
+  width: 1.5rem;
+  height: 1.5rem;
+  padding: 0.125;
+  transform: translate(-50%, -50%);
+  transform-origin: center;
+  cursor: pointer;
+}
